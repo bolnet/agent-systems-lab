@@ -1,0 +1,7 @@
+{
+ "game": "pong",
+ "line": "Pong, with the agent as the left paddle (possibly a single-player variant)",
+ "named": "pong",
+ "correct": true,
+ "confidence": 80
+}

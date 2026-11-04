@@ -1,0 +1,8 @@
+{
+ "game": "asterix",
+ "mean": 59.892,
+ "se": 1.0841529983003892,
+ "episodes": 1000,
+ "max": 250.0,
+ "mean_length": 965.19
+}

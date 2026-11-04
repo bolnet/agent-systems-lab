@@ -1,0 +1,7 @@
+{
+ "game": "pacman",
+ "line": "Pac-Man (a Pac-Man-style maze game with pellets and ghosts on a fixed, symmetric 8 x 8 maze)",
+ "named": "pacman",
+ "correct": true,
+ "confidence": 82
+}

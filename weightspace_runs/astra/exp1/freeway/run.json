@@ -1,0 +1,39 @@
+{
+ "model": "openai/gpt-6-astra",
+ "route": "openrouter",
+ "served_by": "openai/gpt-6-astra",
+ "effort": "high",
+ "max_tokens": 34509,
+ "wall_s": 121.9,
+ "finish_reason": "stop",
+ "cost_usd": 1.23843,
+ "audit": {
+  "tool_free": true,
+  "completed": true,
+  "item_types": {},
+  "tool_items": {},
+  "usage": {
+   "prompt_tokens": 70215,
+   "completion_tokens": 7215,
+   "total_tokens": 77430,
+   "cost": 1.23843,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 70212,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 1.23843,
+    "upstream_inference_prompt_cost": 0.87768,
+    "upstream_inference_completions_cost": 0.36075
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 6214,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}
