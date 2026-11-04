@@ -1,0 +1,19 @@
+**Evaluating fire strategy**
+
+I'm exploring how to orient fire effectively. Centering it randomly can sometimes mean shots go in the right direction, but I want to make deliberate choices based on threats to the left and right. It seems to make sense to position at x4-5 and determine whether to fire or dodge based on the enemies’ locations. Also, I could create an action selection rule based on whether enemies are on the same row. I need to find a way to adjust orientation using a fixed camp setup.**Analyzing movement strategy**
+
+I’m considering summing trails across columns 4-5 and managing distractors while keeping the player's position around 4.5. From there, I can infer facing orientation based on the signed sum of column 4. If there are no other central trails, my orientation shifts based on previous positions. Movement along the middle can only be constrained once depending on the firing orientation. I think I need to create a detector for left-facing based on position at specific coordinates to enhance directional clarity.**Identifying orientation strategy**
+
+When my center is exactly at 4.5, I notice there are two possible orientations to consider. I need to identify which one I'm actually facing, and the trails at 4/5 could help with that. I could try a strategy of moving vertically starting from the left at column x5. Since I'm in this fixed column, I can maintain a left orientation. This lets me shoot left indefinitely while dodging any dangers on the right side as I capture divers passing through x5.**Analyzing danger encoding**
+
+I’m thinking about how H1 danger encoding can factor in directional weight in player rows, with pre-activation playing a role in estimating danger presence. I could arrange two first-layer units per row, gating danger based on player rows above or below. Each unit could output action-specific threats for movement by summing across rows. 
+
+It seems feasible to have H1 detect hazards based on player positions, preventing fire when there’s a threat in the current row.**Evaluating movement and threat response**
+
+I'm considering a situation where both upward and downward dangers are high. In this case, I want to penalize moving both ways and encourage movement instead of firing. I could adjust the logit calculations: increasing upwards based on the difference between the downward and upward danger sums while doing the opposite for downward movement. 
+
+If both threats are high, moves should be equal, and firing should be minimized, leading to random upward or downward movements if needed. This will help define how dangers influence player positions further up or down the path.**Analyzing game strategy**
+
+I’m assessing the imminent risks if I move to a specific row. The current position seems dangerous with potential enemies on adjacent columns. It might be wise to dodge rather than fire, particularly if a bullet can’t eliminate threats. I need to consider multiple hazards and their interactions carefully. It’s crucial to differentiate between current threats and those above or below my position, as their impact could mislead my decisions. I should think critically about movement strategies to keep safe.**Considering encoding player presence**
+
+I'm thinking about how to deliberately encode the player row's presence in a separate output. Maybe something like specifying `currentnodanger=-.5, activecurrent+1`, and for adjustments, maybe `adjnodanger=-1, adjdanger=-.9`. It seems like this could provide a clear way to track changes in danger levels while keeping player presence in consideration. I'm curious to see if this approach would improve clarity and functionality in the implementation.

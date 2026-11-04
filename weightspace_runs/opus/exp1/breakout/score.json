@@ -1,0 +1,7 @@
+{
+ "game": "breakout",
+ "line": "Breakout (a brick-breaker game with a paddle, ball and bricks)",
+ "named": "breakout",
+ "correct": true,
+ "confidence": 93
+}

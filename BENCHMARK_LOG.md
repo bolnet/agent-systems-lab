@@ -566,3 +566,54 @@ plus one earlier. **Every occurrence above 150k context.** See `CACHECOST_METHOD
 
 A mid-run hypothesis that the cache had a *maximum* prefix size (two misses at ~430k) was
 **disproved**: request 160 read back **478,679 tokens** cleanly. The 430k misses were retries.
+
+## Weight-space programming — repeating MIT's Experiments 1 and 5 (2026-11-04)
+
+Prompts, instructions, efforts and scoring from the logs of "Sparks of Weight-Space Programming"
+(Takehi, Teoh, Zhang, Khattab). One reply per game per model, no tools. Records:
+`weightspace_runs/<engine>/exp<N>/<game>/`. Write-up: `WEIGHTSPACE_REPLICATION.md`.
+
+Routes: Astra `openai/gpt-6-astra` through OpenRouter, because Codex 0.166.0 refused it on a ChatGPT
+login ("not supported when using Codex with a ChatGPT account"). Opus `claude-opus-5-5` through
+`claude -p` on a subscription, all tools off. All 14 model turns audited tool-free.
+
+#### Experiment 5 (effort xhigh; 1,000 episodes, sticky 0.1, 10,000-step cap, minatar 1.0.15)
+
+| Game | Model | Mean ± SE | Output tokens | Wall s | Statements (errors) | Nonzero of 20,486 | Billed |
+|---|---|---|---|---:|---:|---:|---:|---:|
+| Breakout | Astra | 520.707 ± 8.09 | 27,606 | 790.9 | 191 (0) | 1,811 | $1.4130 |
+| Seaquest | Astra | 27.663 ± 0.69 | 26,505 | 825.8 | 193 (0) | 1,085 | $1.3829 |
+| Asterix | Astra | 59.892 ± 1.08 | 24,944 | 761.4 | 119 (0) | 780 | $1.2809 |
+| Breakout | Opus 5.5 | 559.558 ± 6.44 | 92,210 | 840.7 | 172 (0) | 1,217 | subscription |
+| Seaquest | Opus 5.5 | 63.450 ± 1.57 | 107,504 | 1070.0 | 232 (0) | 680 | subscription |
+| Asterix | Opus 5.5 | 87.529 ± 1.51 | 66,210 | 622.8 | 275 (0) | 709 | subscription |
+
+MIT's published figures, for comparison: Astra 517.4 ± 7.42 / 53.1 / 53.2; PPO 500M steps
+25.3 / 88.9 / 55.2 (not retrained here). MIT's Astra input tokens 6,119 / 8,112 / 6,199; ours 2,616 / 4,609 / 2,696.
+
+Scorer check, MIT's published Astra networks through our scorer at 1,000 episodes: Breakout 502.88 ± 7.75,
+Seaquest 55.157 ± 1.34, Asterix 54.26 ± 1.07. Our reader rebuilds all three `hand.npz` files exactly.
+
+#### Experiment 1 (effort high; open answer, keyword-mapped `Game:` line)
+
+| Game | MIT Astra | Astra | Astra output tokens | Astra billed | Opus 5.5 | Opus output tokens |
+|---|---|---|---:|---:|---|---:|
+| Breakout | right, 99% | right, 98% | 6,516 | $1.2042 | right, 93% | 11,932 |
+| Pong | right, 96% | right, 97% | 5,264 | $1.1412 | right, 80% | 11,848 |
+| Pac-Man | right, 96% | right, 97% | 4,111 | $1.0836 | right, 82% | 11,447 |
+| Freeway | right, 97% | right, 97% (Frogger) | 7,215 | $1.2384 | right, 80% (Frogger) | 21,847 |
+
+MIT's output tokens: 1,679 to 1,838. Reader correction: the first reader missed `## Game` headings and
+marked Astra's Breakout, Pac-Man and Freeway answers blank; fixed with tests and re-marked from saved
+answers, with no new model calls. MIT's four answers read correctly through the fixed reader.
+
+#### Spend
+
+Astra total **$8.7446**, including a $0.00047 access check. OpenRouter balance fell from $14.5358 to
+$5.7912, exactly matching the recorded total.
+
+#### Caveat
+
+One reply per game per model. Astra's Seaquest replies scored 53.1 (MIT) and 27.7 (ours) from the same
+prompt, so the SE, which covers episodes only, understates the uncertainty in any Astra vs Opus gap.
+Experiments 2, 3, 4, 6, 7 and 8 were not run.

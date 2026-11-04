@@ -1,0 +1,7 @@
+{
+ "game": "pong",
+ "line": "Pong \u2014 a grid version with the player\u2019s paddle on the left and a scoring boundary on the right.",
+ "named": "pong",
+ "correct": true,
+ "confidence": 97
+}

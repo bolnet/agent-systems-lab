@@ -1,0 +1,3 @@
+**Thinking through game scoring rules**
+
+I should mention that the exact scoring rules aren't fully identifiable, but I want to make my request specific. I feel confident at about 98%, and I can aim to deliver around 650 words or perhaps 500 if I use bullet points. The user is asking for detail across various channels, so I think 550 words would be appropriate. I need to ensure I'm outputting biases in rows without any probability.
