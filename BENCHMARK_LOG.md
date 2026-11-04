@@ -610,7 +610,15 @@ answers, with no new model calls. MIT's four answers read correctly through the 
 #### Spend
 
 Astra total **$8.7446**, including a $0.00047 access check. OpenRouter balance fell from $14.5358 to
-$5.7912, exactly matching the recorded total.
+$5.7912, exactly matching the recorded total. Opus had no separate charge; the `total_cost_usd` field in
+its CLI logs sums to $9.1362 across the seven turns, which is the CLI's own figure and was not billed.
+
+#### Verification of the published runs
+
+`python -m context_clock.weightspace.verify_runs --mit DIR`: 42 of 42 checks passed in 4 min 25 s, with no
+model calls. Every reply rebuilt its saved network, every replay matched the saved mean and SE exactly
+(seed 0), every saved Experiment 1 mark came back the same, and all 14 prompts matched MIT's byte for byte.
+Short demo: `minatar_eval --game breakout --episodes 20` on Opus's network gave 569.95 ± 42.71 in about 4 s.
 
 #### Caveat
 

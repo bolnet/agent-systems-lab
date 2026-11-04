@@ -2,7 +2,7 @@
 
 We reran two of the eight experiments in [Sparks of Weight-Space Programming](https://rikiyat.github.io/blog/weight-space-programming/) (Takehi, Teoh, Zhang, Khattab) with their prompts, networks and scoring rules. GPT-6 Astra did what they reported on both, though its Seaquest score came out at about half of theirs. We also gave Opus 5.5 the same prompts, and it scored higher than Astra on all three games. Each game got one run per model, so that lead is a first result and doesn't yet establish that Opus is better.
 
-Every figure here is recorded in `BENCHMARK_LOG.md`. The saved answers and run records are in `weightspace_runs/`.
+Every figure here is recorded in `BENCHMARK_LOG.md`. The prompts, answers, networks and raw logs are in `weightspace_runs/`. For every step from prompt to score, see [WEIGHTSPACE_HOW_WE_DID_IT.md](WEIGHTSPACE_HOW_WE_DID_IT.md).
 
 ## What weight-space programming means
 

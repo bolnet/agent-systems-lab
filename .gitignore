@@ -12,8 +12,3 @@ venv/
 # local run traces
 logs/
 
-# weight-space runs: prompts hold GPL MinAtar source and MIT's weights; networks rebuild from answer.md
-weightspace_runs/**/prompt.txt
-weightspace_runs/**/events.jsonl
-weightspace_runs/**/stderr.log
-weightspace_runs/**/network.npz
