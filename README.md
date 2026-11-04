@@ -10,7 +10,8 @@ LLM agent burns as a conversation grows — and proves that retrieved memory cut
 **🔗 Live:** [the benchmark, visualized](https://bolnet.github.io/context-clock/) ·
 [animated deep-dive](https://bolnet.github.io/context-clock/context-clock-benchmark.html) ·
 [agent token economics](https://bolnet.github.io/context-clock/agent-token-economics.html) ·
-[Jev typed-judges analysis](https://bolnet.github.io/context-clock/typed-judges/report.html)
+[Jev typed-judges analysis](https://bolnet.github.io/context-clock/typed-judges/report.html) ·
+[MIT weight-space programming replication](https://bolnet.github.io/context-clock/weight-space-programming.html)
 
 ---
 
