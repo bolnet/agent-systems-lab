@@ -246,9 +246,9 @@ Two things are not in this repo. The Astra stream was read as it arrived and not
 
 ### Commits
 
-- [`c726dc708c8488f4b0e190c26cffaaeb935f30ba`](https://github.com/bolnet/context-clock/commit/c726dc708c8488f4b0e190c26cffaaeb935f30ba) has the code, tests, answers, scores and first report.
+- [`c726dc708c8488f4b0e190c26cffaaeb935f30ba`](https://github.com/bolnet/agent-systems-lab/commit/c726dc708c8488f4b0e190c26cffaaeb935f30ba) has the code, tests, answers, scores and first report.
 - The commit after it adds this guide, `verify_runs.py`, the raw prompts, event logs and networks.
-- [Pull request #22](https://github.com/bolnet/context-clock/pull/22) holds both.
+- [Pull request #22](https://github.com/bolnet/agent-systems-lab/pull/22) holds both.
 
 `git log -- weightspace_runs context_clock/weightspace` lists them.
 

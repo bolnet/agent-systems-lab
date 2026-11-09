@@ -146,7 +146,7 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
       <a href="#problem">The problem</a>
       <a href="#results">Results</a>
       <a href="#run">Run it</a>
-      <a href="https://github.com/bolnet/context-clock" class="btn btn-g">Fork on GitHub →</a>
+      <a href="https://github.com/bolnet/agent-systems-lab" class="btn btn-g">Fork on GitHub →</a>
     </div>
   </div>
 </nav>
@@ -159,12 +159,12 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
     <h1>Measure how many tokens your agent <span class="ital">wastes</span> re-reading its own history.</h1>
     <p class="lede">The default agent loop re-sends the whole conversation every turn — cumulative input tokens grow <strong>O(n²)</strong>. Cap the window to save money and recall <strong>rots to 0% by turn 10</strong>. context-clock measures both, on your own workload, in under 60 seconds — and proves the fix: <strong>21× fewer input tokens</strong> with retrieved memory, identical across six models.</p>
     <div class="hero-cta">
-      <a href="https://github.com/bolnet/context-clock" class="btn btn-g btn-lg">Fork the benchmark →</a>
+      <a href="https://github.com/bolnet/agent-systems-lab" class="btn btn-g btn-lg">Fork the benchmark →</a>
       <a href="#results" class="btn btn-ghost btn-lg">See the results ↓</a>
     </div>
     <div class="term">
 <span class="cm"># clone &amp; run on your own hardware — no API keys</span><br>
-<span class="pr">$</span> git clone github.com/bolnet/context-clock<br>
+<span class="pr">$</span> git clone github.com/bolnet/agent-systems-lab<br>
 <span class="pr">$</span> python -m context_clock.run --until-rotted --turns 100<br>
 <span class="cm"># → watch input tokens go O(n²) and recall rot to 0%</span>
     </div>
@@ -387,7 +387,7 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
 <footer>
   <div class="wrap foot-in">
     <div class="foot-links">
-      <a href="https://github.com/bolnet/context-clock">github.com/bolnet/context-clock</a>
+      <a href="https://github.com/bolnet/agent-systems-lab">github.com/bolnet/agent-systems-lab</a>
       <a href="https://attestor.dev">attestor.dev</a>
     </div>
     <span class="foot-note"><span class="tag">FREE · MIT · NO LOCK-IN</span> &nbsp; context-clock — the agent token benchmark</span>

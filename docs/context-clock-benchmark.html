@@ -225,7 +225,7 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
       <a href="#chart">The chart</a>
       <a href="#models">6 models</a>
       <a href="#perturn">Per-turn</a>
-      <a href="https://github.com/bolnet/context-clock" class="btn btn-g">Fork on GitHub →</a>
+      <a href="https://github.com/bolnet/agent-systems-lab" class="btn btn-g">Fork on GitHub →</a>
     </div>
   </div>
 </nav>
@@ -238,12 +238,12 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
     <h1>How much does it cost to <span class="ital">remember</span>? We measured it.</h1>
     <p class="lede">A deterministic benchmark of the context-rot arc across <strong>6 models</strong>. Under full-context replay, cumulative input tokens grow <strong>O(n²)</strong>; with retrieval, they grow <strong>O(n)</strong>. By turn 100 that's <strong>~21× fewer input tokens</strong> — at <strong>100% recall</strong>. This is the full picture: the workload, the two failure modes, the per-turn data, and exactly how to reproduce every number.</p>
     <div class="hero-cta">
-      <a href="https://github.com/bolnet/context-clock" class="btn btn-g btn-lg">Fork the benchmark →</a>
+      <a href="https://github.com/bolnet/agent-systems-lab" class="btn btn-g btn-lg">Fork the benchmark →</a>
       <a href="#perturn" class="btn btn-ghost btn-lg">Jump to per-turn data ↓</a>
     </div>
     <div class="term">
 <span class="cm"># reproduce the whole arc locally — no API keys</span><br>
-<span class="pr">$</span> git clone github.com/bolnet/context-clock<br>
+<span class="pr">$</span> git clone github.com/bolnet/agent-systems-lab<br>
 <span class="pr">$</span> python -m context_clock.run --until-rotted --turns 100<br>
 <span class="pr">$</span> python -m context_clock.run --memory --turns 100
     </div>
@@ -477,7 +477,7 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
     <p class="sec-lede reveal">Fork it, run the rot stress test, run the fix, then point the same harness at any model via OpenRouter. Locally it runs on Ollama with no API keys.</p>
     <div class="code-line reveal">
 <span class="cm"># clone</span><br>
-<span class="pr">$</span> git clone github.com/bolnet/context-clock<br><br>
+<span class="pr">$</span> git clone github.com/bolnet/agent-systems-lab<br><br>
 <span class="cm"># 1 · grow until recall dies — the O(n²) failure mode</span><br>
 <span class="pr">$</span> python -m context_clock.run <span class="kw">--until-rotted</span> --turns 100<br><br>
 <span class="cm"># 2 · the fix — retrieved memory, flat context, 100% recall</span><br>
@@ -540,7 +540,7 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
     <p class="sec-lede reveal" style="font-size:14px;color:var(--ink3);margin-top:20px">
       ← <a href="context-clock-landing.html" style="color:var(--g2);text-decoration:none;font-family:var(--mono);font-size:13px">Back to the landing page</a>
       &nbsp;·&nbsp;
-      <a href="https://github.com/bolnet/context-clock" style="color:var(--g2);text-decoration:none;font-family:var(--mono);font-size:13px">github.com/bolnet/context-clock →</a>
+      <a href="https://github.com/bolnet/agent-systems-lab" style="color:var(--g2);text-decoration:none;font-family:var(--mono);font-size:13px">github.com/bolnet/agent-systems-lab →</a>
     </p>
   </section>
 
@@ -549,7 +549,7 @@ footer{border-top:0.5px solid var(--rule);padding:38px 0 60px;margin-top:20px}
 <footer>
   <div class="wrap foot-in">
     <div class="foot-links">
-      <a href="https://github.com/bolnet/context-clock">github.com/bolnet/context-clock</a>
+      <a href="https://github.com/bolnet/agent-systems-lab">github.com/bolnet/agent-systems-lab</a>
       <a href="https://attestor.dev">attestor.dev</a>
       <a href="context-clock-landing.html">← landing</a>
     </div>

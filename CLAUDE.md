@@ -83,7 +83,7 @@ Each run prints the arc and writes `results/<tag>.csv` + `results/<tag>.png`. Ke
 ## Testing
 
 ```bash
-pytest          # 186 tests, deterministic, no network needed
+pytest          # 413 tests, deterministic; one needs a local Ollama model
 ```
 
 Live Attestor tests are gated behind `CONTEXT_CLOCK_LIVE_ATTESTOR=1` (and `ATTESTOR_URL`) and are
@@ -98,7 +98,7 @@ Live Attestor tests are gated behind `CONTEXT_CLOCK_LIVE_ATTESTOR=1` (and `ATTES
 - **`.gitignore` hides** `results/`, `*.png`, `.env`, `.venv/`, `__pycache__/`,
   `.playwright-mcp/`. Generated CSVs/charts and the API key are intentionally untracked.
 - **Default branch is `master`** (not `main`). GitHub Pages serves from `master` `/docs` →
-  https://bolnet.github.io/context-clock/ . `main` is protected; deploy via PR.
+  https://bolnet.github.io/agent-systems-lab/ . `main` is protected; deploy via PR.
 - **`docs/`** holds the published landing page (`index.html`) + animated deep-dive
   (`context-clock-benchmark.html`). Keep numbers in sync with `BENCHMARK_LOG.md`.
 
