@@ -1,21 +1,25 @@
-# context-clock
+# agent-systems-lab
 
-**The open-source benchmark for agent token efficiency.** It measures how many tokens an
-LLM agent burns as a conversation grows — and proves that retrieved memory cuts input tokens
-**~21×** while holding **100% recall**, identically across six models (open and closed).
+**Reproducible research on production AI agents: what they cost, how to judge them, and what frontier models
+can do.** Four studies, every number re-runnable from committed logs. MIT, runs locally on
+[Ollama](https://ollama.com) or against any OpenRouter model, 413 tests.
 
-> Free · MIT · runs locally on [Ollama](https://ollama.com) (no API keys) or against any
-> OpenRouter model. Every number below is reproducible — 99 tests, deterministic workload.
+> Formerly `context-clock`. The Python package and CLI keep that name (`python -m context_clock.run`).
 
-**🔗 Live:** [the benchmark, visualized](https://bolnet.github.io/context-clock/) ·
-[animated deep-dive](https://bolnet.github.io/context-clock/context-clock-benchmark.html) ·
-[agent token economics](https://bolnet.github.io/context-clock/agent-token-economics.html) ·
-[Jev typed-judges analysis](https://bolnet.github.io/context-clock/typed-judges/report.html) ·
-[MIT weight-space programming replication](https://bolnet.github.io/context-clock/weight-space-programming.html)
+## The experiments
+
+| # | Study | Headline result | Read |
+|---|---|---|---|
+| 1 | **Context clock**: token growth vs. memory | Re-sending the conversation grows input tokens O(n²); retrieved memory cuts them **~21×** at **100% recall**, identically across six open and closed models | [live](https://bolnet.github.io/agent-systems-lab/) · [deep-dive](https://bolnet.github.io/agent-systems-lab/context-clock-benchmark.html) · [details below](#study-1-context-clock) |
+| 2 | **cachecost**: where agent money goes with prompt caching | A lapsed cache rewrites the same prefix at 1.25× instead of 0.1×: a **12.5× jump on identical work**; 30 claims checked against the price card | [token economics](https://bolnet.github.io/agent-systems-lab/agent-token-economics.html) · [`CACHE_CLAIMS.md`](CACHE_CLAIMS.md) · [`CACHECOST_METHODOLOGY.md`](CACHECOST_METHODOLOGY.md) |
+| 3 | **Typed judges**: typed decision models as code-review judges | Nine systems on a 150-case known-verdict corpus; we caught our own faked 30/30 (the label leaked through file paths). Against Claude on 1,834 questions: Claude Opus 5 **91.5%**, Jev 85.4%; Claude 5.5 rerun: Opus 5.5 **94.5%** | [report](https://bolnet.github.io/agent-systems-lab/typed-judges/report.html) · [Claude 5.5 rerun](https://bolnet.github.io/agent-systems-lab/typed-judges-claude-5-5/report.html) · [`REPORT.md`](docs/typed-judges/REPORT.md) |
+| 4 | **Weight-space programming**: replicating MIT's experiments | Models write all 20,486 weights of a game-playing network directly, with no training; on Breakout, Opus 5.5's network scored **559.6** vs 25.3 for MIT's PPO at 500M steps | [page](https://bolnet.github.io/agent-systems-lab/weight-space-programming.html) · [`WEIGHTSPACE_REPLICATION.md`](WEIGHTSPACE_REPLICATION.md) · [how we did it](WEIGHTSPACE_HOW_WE_DID_IT.md) |
 
 ---
 
-## The finding
+## Study 1: Context clock
+
+### The finding
 
 Re-sending the whole conversation to the model every turn (the default agent loop) makes the
 **input tokens** it must read grow **O(n²)** — a parabola that compounds with every session.
@@ -117,7 +121,7 @@ Findings and evidence live in **[`CACHE_CLAIMS.md`](CACHE_CLAIMS.md)**. Two that
 ## Reproduce
 
 ```bash
-pip install -r requirements.txt && pytest   # 186 tests, deterministic, no network
+pip install -r requirements.txt && pytest   # 413 tests (one needs a local Ollama model), deterministic, no network
 ```
 
 `BENCHMARK_LOG.md` is the committed source of truth — every measured run, every number, with CSV
@@ -136,4 +140,4 @@ MIT. No lock-in.
 
 ## Related report
 
-[Typed decision models as code-review judges](docs/typed-judges/REPORT.md) ([page](https://bolnet.github.io/context-clock/typed-judges/report.html)) — Jev and every open-source Jev-class alternative on a 150-case known-verdict review corpus: the label leak that faked a 30/30, the grader route a constant answer can game, and per-question calibration for each system; updated 2026-09-27 with CLM-8B, the Stanford/NVIDIA open System One model, on the same questions (Jev 86.5%, CLM-8B 56.1%).
+[Typed decision models as code-review judges](docs/typed-judges/REPORT.md) ([page](https://bolnet.github.io/agent-systems-lab/typed-judges/report.html)) — Jev and every open-source Jev-class alternative on a 150-case known-verdict review corpus: the label leak that faked a 30/30, the grader route a constant answer can game, and per-question calibration for each system; updated 2026-09-27 with CLM-8B, the Stanford/NVIDIA open System One model, on the same questions (Jev 86.5%, CLM-8B 56.1%).

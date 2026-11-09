@@ -173,7 +173,7 @@ footer p{color:inherit;max-width:none}
 W1[483:540:6, 0] = [0,1,2,3,4,5,6,7,8,9]
 W1[423:480:6, 0] = [0,1,3,6,8,11,13,16,18,19]
 W1[364:420:6, 0] = [1,0,-2,-3,-5,-6,-8,-9,-11,-12]</pre>
-    <p class="src"><a href="https://github.com/bolnet/context-clock/blob/master/weightspace_runs/opus/exp5/breakout/answer.md">Read the full reply</a>. It says: "I traced this by hand through a full opening sequence and wall cases, but nothing has been run."</p>
+    <p class="src"><a href="https://github.com/bolnet/agent-systems-lab/blob/master/weightspace_runs/opus/exp5/breakout/answer.md">Read the full reply</a>. It says: "I traced this by hand through a full opening sequence and wall cases, but nothing has been run."</p>
   </div>
 </section>
 
@@ -235,7 +235,7 @@ W1[364:420:6, 0] = [1,0,-2,-3,-5,-6,-8,-9,-11,-12]</pre>
   <h2 id="check">Check it yourself</h2>
   <p>This rebuilds every network from its saved reply, replays it and marks each answer again. It calls no model and writes no files. The full replay took under 5 minutes on our Mac, and <code>--no-play</code> skips the games.</p>
   <div class="panel pad">
-<pre>git clone https://github.com/bolnet/context-clock
+<pre>git clone https://github.com/bolnet/agent-systems-lab
 cd context-clock
 pip install -r requirements-weightspace.txt
 python -m context_clock.weightspace.verify_runs</pre>
@@ -245,10 +245,10 @@ python -m context_clock.weightspace.verify_runs</pre>
 <section aria-labelledby="more">
   <h2 id="more">Read the details</h2>
   <div class="panel linkset">
-    <a href="https://github.com/bolnet/context-clock/blob/master/WEIGHTSPACE_HOW_WE_DID_IT.md"><b>How we did it</b><span>Every step, what went wrong, and where each log is</span></a>
-    <a href="https://github.com/bolnet/context-clock/tree/master/weightspace_runs"><b>Raw logs</b><span>Prompts, replies, networks and scores for every run</span></a>
-    <a href="https://github.com/bolnet/context-clock/blob/master/BENCHMARK_LOG.md"><b>Benchmark log</b><span>The record of every figure on this page</span></a>
-    <a href="https://github.com/bolnet/context-clock/pull/22"><b>Pull request #22</b><span>The code, tests and commits</span></a>
+    <a href="https://github.com/bolnet/agent-systems-lab/blob/master/WEIGHTSPACE_HOW_WE_DID_IT.md"><b>How we did it</b><span>Every step, what went wrong, and where each log is</span></a>
+    <a href="https://github.com/bolnet/agent-systems-lab/tree/master/weightspace_runs"><b>Raw logs</b><span>Prompts, replies, networks and scores for every run</span></a>
+    <a href="https://github.com/bolnet/agent-systems-lab/blob/master/BENCHMARK_LOG.md"><b>Benchmark log</b><span>The record of every figure on this page</span></a>
+    <a href="https://github.com/bolnet/agent-systems-lab/pull/22"><b>Pull request #22</b><span>The code, tests and commits</span></a>
     <a href="https://rikiyat.github.io/blog/weight-space-programming/"><b>MIT's post</b><span>Sparks of Weight-Space Programming</span></a>
     <a href="https://github.com/RikiyaT/lm_understand-logs"><b>MIT's logs</b><span>The prompts, networks and scores we started from</span></a>
   </div>
